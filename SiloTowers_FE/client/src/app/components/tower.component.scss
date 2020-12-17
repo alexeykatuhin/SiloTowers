@@ -1,0 +1,45 @@
+.inner-box {
+        padding: 0px 0;
+    height: 80vh;
+    background-color: cadetblue;
+  }
+
+  .edit{
+    cursor: pointer;
+    height: 2.5%;
+    float: right;
+    margin-right: 3px;
+  }
+
+  .indicator{
+    float:left;
+    text-align: center;
+    height: 20%;
+    width: 100%;
+
+    .value{
+      font-weight: bold;
+      height: 25%;
+    }
+
+    .title{
+      height: 75%;
+    }
+  }
+
+
+  .level{
+    float: left;
+    height: 55%;
+    width: 100%;
+    .empty{
+      background-color: gray;      
+    }
+    .full{
+      background-color: green;      
+    }
+  }
+
+  .value{
+    font-weight: bold;
+  }

@@ -1,0 +1,6 @@
+<div class="wrapper">
+<div *ngIf="towers.length>0" class="container"  nz-row [nzGutter]="20">
+  <div *ngFor="let tower of towers" nz-col class="gutter-row" [nzSpan]="3">
+    <tower [tower]="tower"></tower>
+  </div>
+</div></div>

@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SiloTowers.Core\SiloTowers.Core.csproj" />
+    <ProjectReference Include="..\SiloTowers.Data\SiloTowers.Data.csproj" />
+  </ItemGroup>
+
+</Project>

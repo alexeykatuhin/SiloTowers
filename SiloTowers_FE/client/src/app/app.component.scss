@@ -1,0 +1,15 @@
+
+  .inner-box {
+    background: #0092ff;
+    padding: 8px 0;
+  }
+
+.wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;    
+    .container{
+        width: 90%;
+    }
+}

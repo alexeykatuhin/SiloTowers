@@ -1,0 +1,66 @@
+<div class="inner-box">
+    <div class="edit" (click)="showModal(tower.indicatorLevel)"><fa-icon [icon]="faCog"></fa-icon></div>
+    <div class="indicator">
+        <div class="title">{{tower.indicatorLevel.title}}</div>
+        <div class="value" [ngStyle]="{color:levelColor}">{{tower.indicatorLevel.value}}</div>
+    </div>
+    <div class="level">
+        <div class="empty" [ngStyle]="{height:emptyPercent}"></div>
+        <div class="full" [ngStyle]="{height:fullPercent}"></div>
+    </div>    
+    <div class="edit" (click)="showModal(tower.indicatorMass)"><fa-icon [icon]="faCog"></fa-icon></div>
+    <div class="indicator">
+        <div class="title">{{tower.indicatorMass.title}}</div>
+        <div class="value" [ngStyle]="{color:massColor}">{{tower.indicatorMass.value}}</div>
+    </div>
+</div>
+<nz-modal [(nzVisible)]="isShowModal" nzTitle="Edit Indicator" (nzOnCancel)="cancel() "[nzFooter]="modalFooter">
+    <ng-container *nzModalContent>
+        <form  nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
+            <nz-form-item>
+              <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="title">
+                <span>
+                  Title
+                </span>
+              </nz-form-label>
+              <nz-form-control [nzSm]="18" [nzXs]="24" nzErrorTip="Wrong value!">
+                <input nz-input id="title" formControlName="title" />
+              </nz-form-control>
+            </nz-form-item>
+            <nz-form-item>
+              <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="value">
+                <span>
+                  Value
+                </span>
+              </nz-form-label>
+              <nz-form-control [nzSm]="18" [nzXs]="24" nzErrorTip="Wrong value!">
+                <input nz-input id="value" formControlName="value" />
+              </nz-form-control>
+            </nz-form-item>
+            <nz-form-item>
+              <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="minValue">
+                <span>
+                  Min Value
+                </span>
+              </nz-form-label>
+              <nz-form-control [nzSm]="18" [nzXs]="24" nzErrorTip="Wrong value!">
+                <input nz-input id="minValue" formControlName="minValue" />
+              </nz-form-control>
+            </nz-form-item>
+            <nz-form-item>
+              <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="maxValue">
+                <span>
+                  Max Value
+                </span>
+              </nz-form-label>
+              <nz-form-control [nzSm]="18" [nzXs]="24" nzErrorTip="Wrong value!">
+                <input nz-input id="maxValue" formControlName="maxValue" />
+              </nz-form-control>
+            </nz-form-item>
+        </form>  
+    </ng-container>
+    <ng-template #modalFooter>
+        <button nz-button nzType="default" (click)="cancel()">Cancel</button>
+        <button nz-button nzType="primary" (click)="submitForm()" [disabled]="validateForm.invalid" [nzLoading]="isConfirmLoading">Submit</button>
+      </ng-template>
+  </nz-modal>
